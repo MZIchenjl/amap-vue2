@@ -28,7 +28,13 @@ export default {
       const layer = new AMap.LabelsLayer(options);
       this.$amapComponent = layer;
       this.$amapLayer = layer;
-      (this.$children || []).forEach(vm => vm.$emit(CONSTANTS.AMAP_LAYER_READY_EVENT, layer));
+      const markers = [];
+      (this.$children || []).forEach(vm => {
+        vm.$emit(CONSTANTS.AMAP_LAYER_READY_EVENT, layer);
+        markers.push(vm.$amapComponent);
+        vm.$isLayerAdded = true;
+      });
+      layer.add(markers);
     }
   },
   render(h) {

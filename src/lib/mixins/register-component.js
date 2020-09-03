@@ -166,8 +166,9 @@ export default {
     register() {
       const res = this.__initComponent && this.__initComponent(this.convertProps());
       if (this.$amapComponent) {
-        if (this.$layer) {
+        if (this.$layer && !this.$amapComponent.$isLayerAdded) {
           this.$layer.add(this.$amapComponent);
+          this.$isLayerAdded = true;
         } else if (this.$amapComponent.setMap) {
           this.$amapComponent.setMap(this.$amap);
         } else if (this.$amap) {

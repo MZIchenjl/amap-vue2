@@ -70,7 +70,7 @@ module.exports = {
 },
   methods: {
     onDataLoad() {
-      this.positionData = window.Positions.slice(0, 3e3);
+      this.positionData = window.Positions.slice(0, 3e4);
     },
     onMouseOver(e) {
       this.markerPosition = [e.lnglat.getLng(), e.lnglat.getLat()];
