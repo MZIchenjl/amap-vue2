@@ -7,6 +7,6 @@ if [ "$GITHUB_TOKEN" ] && [ "$TRAVIS_PULL_REQUEST" = false ] && [ "$TRAVIS_BRANC
   git checkout -b gh-pages
   git add .
   git -c user.name='travis' -c user.email=$NPM_EMAIL commit -m "update: docs-branch"
-  git push -f https://$GITHUB_TOKEN:x-oauth-basic@github.com/MZIchenjl/vue-amap.git gh-pages
+  git push -f https://$GITHUB_TOKEN:x-oauth-basic@github.com/MZIchenjl/amap-vue2.git gh-pages
   cd ..
 fi

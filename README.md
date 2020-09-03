@@ -1,34 +1,34 @@
-# vue-amap
-[![Build Status](https://travis-ci.org/MZIchenjl/vue-amap.svg?branch=master)](https://travis-ci.org/MZIchenjl/vue-amap)
+# amap-vue2
+[![Build Status](https://travis-ci.org/MZIchenjl/amap-vue2.svg?branch=master)](https://travis-ci.org/MZIchenjl/amap-vue2)
 [![npm package](https://img.shields.io/npm/v/amap-vue2.svg)](https://www.npmjs.org/package/amap-vue2)
 [![NPM downloads](http://img.shields.io/npm/dm/amap-vue2.svg)](https://npmjs.org/package/amap-vue2)
-![Npm Publish](https://github.com/MZIchenjl/vue-amap/workflows/Npm%20Publish/badge.svg)
+![Npm Publish](https://github.com/MZIchenjl/amap-vue2/workflows/Npm%20Publish/badge.svg)
 ![JS gzip size](http://img.badgesize.io/https://unpkg.com/amap-vue2/src/lib/index.js?compression=gzip&label=gzip%20size:%20JS)
-[![license](https://img.shields.io/github/license/MZIchenjl/vue-amap.svg?style=flat-square)](https://github.com/MZIchenjl/vue-amap)
-[![GitHub stars](https://img.shields.io/github/stars/MZIchenjl/vue-amap.svg?style=social&label=Star)](https://github.com/MZIchenjl/vue-amap)
+[![license](https://img.shields.io/github/license/MZIchenjl/amap-vue2.svg?style=flat-square)](https://github.com/MZIchenjl/amap-vue2)
+[![GitHub stars](https://img.shields.io/github/stars/MZIchenjl/amap-vue2.svg?style=social&label=Star)](https://github.com/MZIchenjl/amap-vue2)
 
-> vue-amap是一套基于Vue 2.0和高德地图的地图组件。
+> amap-vue2是一套基于Vue 2.0和高德地图的地图组件。
 > Fork 自 <https://github.com/ElemeFE/vue-amap/> 支持高德地图最新的特性。
 
 ## 安装
 ```
-npm install -S vue-amap
+npm install -S amap-vue2
 ```
 
 ## 文档
-<https://mzi.red/vue-amap>
+<https://mzi.red/amap-vue2>
 
 
 ## 快速上手
 
-引入vue-amap
+引入amap-vue2
 
 ```javascript
-// 引入vue-amap
-import VueAMap from 'vue-amap';
+// 引入amap-vue2
+import VueAMap from 'amap-vue2';
 Vue.use(VueAMap);
 
-// 初始化vue-amap
+// 初始化amap-vue2
 VueAMap.initAMapApiLoader({
   // 高德的key
   key: 'YOUR_KEY',

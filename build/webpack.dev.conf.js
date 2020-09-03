@@ -24,7 +24,7 @@ module.exports = merge(baseWebpackConfig, {
       'process.env': config.dev.env
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vue-amap'],
+      name: ['amap-vue2'],
       minChunks: 2
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
