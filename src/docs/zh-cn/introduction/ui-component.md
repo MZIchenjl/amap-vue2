@@ -34,7 +34,7 @@ VueAMap.initAMapApiLoader({
   </style>
   <script>
     // NPM 方式
-    // import { AMapManager } from 'vue-amap';
+    // import { AMapManager } from 'amap-vue2';
     // CDN 方式
     let amapManager = new VueAMap.AMapManager();
     module.exports = {
@@ -75,7 +75,7 @@ VueAMap.initAMapApiLoader({
   </style>
   <script>
     // NPM 方式
-    // import { lazyAMapApiLoaderInstance } from 'vue-amap';
+    // import { lazyAMapApiLoaderInstance } from 'amap-vue2';
     // CDN 方式
     const loadPromise = window.VueAMap.lazyAMapApiLoaderInstance.load()
     module.exports = {

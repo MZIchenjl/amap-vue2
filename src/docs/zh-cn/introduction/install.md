@@ -7,26 +7,26 @@
 推荐 npm 安装。
 
 ```
-npm install vue-amap --save
+npm install amap-vue2 --save
 ```
 
 ## CDN
 
-目前可通过 [unpkg.com/vue-amap](https://unpkg.com/vue-amap/dist/index.js) 获取最新版本的资源。
+目前可通过 [unpkg.com/amap-vue2](https://unpkg.com/amap-vue2/dist/index.js) 获取最新版本的资源。
 
 ```html
-<script src="https://unpkg.com/vue-amap/dist/index.js"></script>
+<script src="https://unpkg.com/amap-vue2/dist/index.js"></script>
 ```
 
 ## Hello World
 
-通过 CDN 的方式我们可以很容易地使用 vue-amap 写出一个 Hello world 页面。
+通过 CDN 的方式我们可以很容易地使用 amap-vue2 写出一个 Hello world 页面。
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>demo | vue-amap</title>
+    <title>demo | amap-vue2</title>
     <meta charset="UTF-8">
   </head>
   <body>
@@ -37,7 +37,7 @@ npm install vue-amap --save
   <!-- 先引入 Vue -->
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <!-- 引入组件库 -->
-  <script src="https://unpkg.com/vue-amap/dist/index.js"></script>
+  <script src="https://unpkg.com/amap-vue2/dist/index.js"></script>
   <script>
     // 初始化高德地图的 key 和插件
     window.VueAMap.initAMapApiLoader({

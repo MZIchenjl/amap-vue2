@@ -1,6 +1,6 @@
 <template>
-<div class="el-vue-amap-container">
-    <div class="el-vue-amap"></div>
+<div class="el-amap-vue2-container">
+    <div class="el-amap-vue2"></div>
     <slot></slot>
 </div>
 </template>
@@ -208,7 +208,7 @@ export default {
     createMap() {
       this._loadPromise.then(() => {
         this.$emit('load');
-        let mapElement = this.$el.querySelector('.el-vue-amap');
+        let mapElement = this.$el.querySelector('.el-amap-vue2');
         const elementID = this.vid || guid();
         mapElement.id = elementID;
         this.$amap = this.$amapComponent = new AMap.Map(elementID, this.convertProps());
@@ -231,9 +231,9 @@ export default {
 </script>
 
 <style lang="less">
-.el-vue-amap-container {
+.el-amap-vue2-container {
   height: 100%;
-.el-vue-amap {
+.el-amap-vue2 {
     height: 100%;
   }
 }

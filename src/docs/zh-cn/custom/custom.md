@@ -31,7 +31,7 @@
     }
   </style>
   <script>
-    // import {createCustomComponent} from 'vue-amap' 
+    // import {createCustomComponent} from 'amap-vue2' 
     const { createCustomComponent } = VueAMap;
     // 组件定义
     const AmapCanvasMarkers = createCustomComponent({
@@ -132,7 +132,7 @@
 </script>
 
 ```js
-import {createCustomComponent} from 'vue-amap'
+import {createCustomComponent} from 'amap-vue2'
 const customComponent = createCustomComponent({
   name: 'custom-component-name',
   init() {  // required
@@ -170,12 +170,12 @@ Vue.use(customComponent) // registered as a component named [custom-component-na
 名称 | 类型 | 说明
 ---|---|---|
 name | String | component Name
-init  |  Function(options, AMapInstance)  |  该 hook 是父组件`vue-amap`中地图实例初始化后进行调用的, 所以依赖于父组件，该函数的作用是组件对应的高德实例进行初始化，关键步骤`return componentInstance / resolve(componentInstance)`，返回个实例，异步初始化需要返回一个 `Promise`，将实例 `resolve` 出来；
+init  |  Function(options, AMapInstance)  |  该 hook 是父组件`amap-vue2`中地图实例初始化后进行调用的, 所以依赖于父组件，该函数的作用是组件对应的高德实例进行初始化，关键步骤`return componentInstance / resolve(componentInstance)`，返回个实例，异步初始化需要返回一个 `Promise`，将实例 `resolve` 出来；
 contextReady | Fucntion | 该 hook 在组件 `mounted` 中并且浏览器上下文完成高德脚本加载后执行，该 hook 内部可安全使用高德API，该 hook 依赖于内部的 `lazyAMapApiLoaderInstance`, 请务必保证在该组件 `mounted` 前完成初始化函数 `initAMapApiLoader` 调用。该 hook 并不依赖父组件，可独立存在，适用于一些简单无交互的工具组件
 converters  | Object: {[propKey]:Function} | 对于组件原始入参的转换函数，像一些坐标类型数据需要从原始数组转为 `AMap.LngLat`，本库内部内置了 `position: toLngLat, offset: toPixel, bounds: toBounds` 的转换
 handlers  | Object: {[propKey]: Function} | 自定义组件属性值变化后对应的回调，内置的回调指定规则是 `自定义 handler -> 高德实例 set[PropKey] 方法 -> setOptions 方法` 从左到右的依次判空，如果存在则指定调用该回调，注：回调函数的默认 `this` 是该 `高德实例`
 
-原理其实很简单，内部 `watch` 了所有提前申明的 `prop`，propValue 改变时执行对应回调，规则如上。自定义组件的实例上维护了有两个特殊的属性 `$amap` 高德地图实例(父组件为 `vue-amap` 才会初始化)和 `$amapComponent`高德组件实例；
+原理其实很简单，内部 `watch` 了所有提前申明的 `prop`，propValue 改变时执行对应回调，规则如上。自定义组件的实例上维护了有两个特殊的属性 `$amap` 高德地图实例(父组件为 `amap-vue2` 才会初始化)和 `$amapComponent`高德组件实例；
 
-关于 `destoryed` 内置了[通用的回收方法](https://github.com/MZIchenjl/vue-amap/blob/dev/src/lib/mixins/register-component.js#L23)，如果不满足请务必自行回收。
+关于 `destoryed` 内置了[通用的回收方法](https://github.com/MZIchenjl/amap-vue2/blob/dev/src/lib/mixins/register-component.js#L23)，如果不满足请务必自行回收。
 

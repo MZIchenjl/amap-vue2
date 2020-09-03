@@ -3,7 +3,7 @@
 引入插件
 
 ```
-import VueAMap from 'vue-amap';
+import VueAMap from 'amap-vue2';
 
 VueAMap.initAMapApiLoader({
   key: 'YOUR CODE',

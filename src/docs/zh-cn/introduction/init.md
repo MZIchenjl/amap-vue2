@@ -4,12 +4,12 @@
 
 ## 引入地图
 
-一般项目中，对于 vue-amap 的初始化只需要调用 `initAMapApiLoader` 方法即可。
+一般项目中，对于 amap-vue2 的初始化只需要调用 `initAMapApiLoader` 方法即可。
 
 NPM 安装：
 
 ```javascript
-import VueAMap from 'vue-amap';
+import VueAMap from 'amap-vue2';
 
 Vue.use(VueAMap);
 VueAMap.initAMapApiLoader({
@@ -31,13 +31,13 @@ window.VueAMap.initAMapApiLoader({
 
 ## Promise
 
-在**定制化程度较高**的项目中，开发者可能只想通过 vue-amap 引入高德地图，而部分实例化的操作直接基于高德地图的 sdk 完成。这个时候就需要 `lazyAMapApiLoaderInstance`。
+在**定制化程度较高**的项目中，开发者可能只想通过 amap-vue2 引入高德地图，而部分实例化的操作直接基于高德地图的 sdk 完成。这个时候就需要 `lazyAMapApiLoaderInstance`。
 
 NPM 安装：
 
 ```javascript
-import VueAMap from 'vue-amap';
-import { lazyAMapApiLoaderInstance } from 'vue-amap';
+import VueAMap from 'amap-vue2';
+import { lazyAMapApiLoaderInstance } from 'amap-vue2';
 
 Vue.use(VueAMap);
 VueAMap.initAMapApiLoader({

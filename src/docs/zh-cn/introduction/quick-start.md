@@ -2,7 +2,7 @@
 
 ---
 
-本节将介绍如何在项目中使用 vue-amap。
+本节将介绍如何在项目中使用 amap-vue2。
 
 
 ## 1 - 项目结构
@@ -37,7 +37,7 @@ index.html
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vue-amap-starter</title>
+    <title>amap-vue2-starter</title>
   </head>
   <body>
     <div id="app"></div>
@@ -49,13 +49,13 @@ index.html
 package.json
 ```json
 {
-  "name": "vue-amap-starter",
+  "name": "amap-vue2-starter",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --port 9876",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "vue-amap": "^0.0.8",
+    "amap-vue2": "^0.0.8",
     "vue": "^2.0.5"
   },
   "devDependencies": {
@@ -129,12 +129,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-## 2 - 引入vue-amap
+## 2 - 引入amap-vue2
 
 main.js
 ```javascript
 import Vue from 'vue';
-import VueAMap from 'vue-amap';
+import VueAMap from 'amap-vue2';
 import App from './App.vue';
 
 Vue.use(VueAMap);
@@ -166,7 +166,7 @@ App.vue
 export default {
   data () {
     return {
-      msg: 'vue-amap向你问好！'
+      msg: 'amap-vue2向你问好！'
     }
   }
 }

@@ -11,7 +11,7 @@
 *使用插件之前一定要初始化，否则会报错！*
 
 ```javascript
-import VueAMap from 'vue-amap';
+import VueAMap from 'amap-vue2';
 VueAMap.initAMapApiLoader({
   key: 'YOUR_KEY',
   plugin: ['Autocomplete', 'PlaceSearch', 'Scale', 'OverView', 'ToolBar', 'MapType', 'PolyEditor', 'AMap.CircleEditor']
