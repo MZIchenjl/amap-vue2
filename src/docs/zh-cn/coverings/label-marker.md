@@ -11,7 +11,7 @@
     <el-amap class="amap-demo" :show-lable="showLabel" :view-mode="viewMode" :pitch="pitch" :expand-zoom-range="expandZoomRange" :zoom="zoom" :center="center" :map-style="mapStyle">
         <el-amap-marker v-if="!!markerContent" :content="markerContent" :position="markerPosition"></el-amap-marker>
         <el-amap-labels-layer :z-index="layerZIndex" :animation="layerAnimation" :collision="layerCollision">
-            <el-amap-label-marker v-for="(position, index) in positionData" :key="index" :icon="icon" :position="position" @mouseover="onMouseOver"></el-amap-label-marker>
+            <el-amap-label-marker v-for="(position, index) in positionData" :key="index" :icon="icon" :position="position" @mouseover="onMouseOver" @mouseout="onMouseOut"></el-amap-label-marker>
         </el-amap-labels-layer>
     </el-amap>
   </div>
@@ -70,11 +70,15 @@ module.exports = {
 },
   methods: {
     onDataLoad() {
-      this.positionData = window.Positions.slice(0, 3e4);
+      this.positionData = window.Positions.slice(0, 3e3);
     },
     onMouseOver(e) {
       this.markerPosition = [e.lnglat.getLng(), e.lnglat.getLat()];
       this.markerContent = e.lnglat.toString();
+    },
+    onMouseOut() {
+        this.markerPosition = null;
+        this.markerContent = '';
     }
   }
 };

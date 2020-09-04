@@ -30,9 +30,11 @@ export default {
       this.$amapLayer = layer;
       const markers = [];
       (this.$children || []).forEach(vm => {
-        vm.$emit(CONSTANTS.AMAP_LAYER_READY_EVENT, layer);
-        markers.push(vm.$amapComponent);
-        vm.$isLayerAdded = true;
+        if (vm.$options.name === 'el-amap-label-marker') {
+          vm.$emit(CONSTANTS.AMAP_LAYER_READY_EVENT, layer);
+          markers.push(vm.$amapComponent);
+          vm.$isLayerAdded = true;
+        }
       });
       layer.add(markers);
     }
