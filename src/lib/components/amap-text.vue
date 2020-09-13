@@ -105,6 +105,10 @@ export default {
       }
     },
 
+    anchor: {
+      type: Number
+    },
+
     animation: {
       type: String,
       default() {

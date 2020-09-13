@@ -13,6 +13,8 @@ export default {
     'closeWhenClickMap',
     'content',
     'size',
+    'anchor',
+    'retainWhenClose',
     'offset',
     'position',
     'showShadow',
