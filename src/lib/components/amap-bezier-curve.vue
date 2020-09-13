@@ -61,6 +61,10 @@ export default {
       type: Boolean
     },
 
+    borderWeight: {
+      type: Number
+    },
+
     visible: {
       type: Boolean,
       default: true

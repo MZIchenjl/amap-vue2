@@ -21,6 +21,7 @@ export default {
   props: [
     'vid',
     'position',
+    'anchor',
     'offset',
     'icon',
     'content',
