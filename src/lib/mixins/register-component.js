@@ -106,11 +106,22 @@ export default {
     registerEvents() {
       this.setEditorEvents && this.setEditorEvents();
       if (!this.$options.propsData) return;
+      const filters = {
+        end: true,
+        move: true,
+        adjust: true,
+        addnode: true,
+        removenode: true
+      };
       for (const eventName in this.$listeners) {
+        const evtName = eventName.startsWith('~') ? eventName.slice(1) : eventName;
+        if (this.$amapComponent.editor && filters[evtName]) {
+          continue;
+        }
         if (eventName.startsWith('~')) {
-          eventHelper.addListenerOnce(this, this.$amapComponent, eventName.slice(1));
+          eventHelper.addListenerOnce(this, this.$amapComponent, evtName);
         } else {
-          eventHelper.addListener(this, this.$amapComponent, eventName);
+          eventHelper.addListener(this, this.$amapComponent, evtName);
         }
       }
     },
