@@ -15,7 +15,7 @@ export default {
         const eventName = once ? key.slice(1) : key;
         if (filters[eventName]) {
           if (once) {
-            eventHelper.addListenerOnce(this, this.$amapComponent, eventName);
+            eventHelper.addListenerOnce(this, this.$amapComponent.editor, eventName);
           } else {
             eventHelper.addListener(this, this.$amapComponent.editor, eventName);
           }
