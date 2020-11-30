@@ -24,7 +24,11 @@ export default {
   ],
   data() {
     return {
-      converters: {},
+      converters: {
+        path(val) {
+          return val.map(item => ([+item[0], +item[1]]));
+        }
+      },
       handlers: {
         visible(flag) {
           flag === false ? this.hide() : this.show();

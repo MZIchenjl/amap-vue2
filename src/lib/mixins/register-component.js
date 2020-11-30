@@ -43,10 +43,12 @@ export default {
     this.unregisterEvents();
     if (!this.$amapComponent) return;
 
+    if (this.$amapComponent.clear) {
+      this.$amapComponent.clear();
+    }
+
     if (this.$layer) { // 图层类
       this.$layer.remove(this.$amapComponent);
-    } else if (this.$amapComponent.setMap) {
-      this.$amapComponent.setMap(null);
     } else if (this.$amap) { // 地图直接挂载
       this.$amap.remove(this.$amapComponent);
     }
@@ -176,7 +178,7 @@ export default {
     },
     register() {
       const res = this.__initComponent && this.__initComponent(this.convertProps());
-      if (this.$amapComponent) {
+      if (this.$amapComponent && this.$options.name !== 'el-amap') {
         if (this.$layer && !this.$amapComponent.$isLayerAdded) {
           this.$layer.add(this.$amapComponent);
           this.$isLayerAdded = true;
@@ -186,7 +188,7 @@ export default {
           this.$amap.add(this.$amapComponent);
         }
       }
-      if (res && res.then) res.then((instance) => this.registerRest(instance));  // promise
+      if (res && res.then) res.then((instance) => this.registerRest(instance));
       else this.registerRest(res);
     },
 
